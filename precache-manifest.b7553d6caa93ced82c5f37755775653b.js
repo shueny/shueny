@@ -8,12 +8,12 @@ self.__precacheManifest = [
     "url": "/side-projects/js/about.70d26bde.js"
   },
   {
-    "revision": "d4d49d3ae607064087ce",
+    "revision": "ac5db182e5d72e28cae1",
     "url": "/side-projects/css/app.d6f8d428.css"
   },
   {
-    "revision": "d4d49d3ae607064087ce",
-    "url": "/side-projects/js/app.086222aa.js"
+    "revision": "ac5db182e5d72e28cae1",
+    "url": "/side-projects/js/app.399f39cb.js"
   },
   {
     "revision": "cbf3fa85e11ee44c04f9",
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/side-projects/img/vue_logo.8b8800e8.png"
   },
   {
-    "revision": "1a2c8585e46857a5dd3119a0435aee94",
+    "revision": "5b4e8a144c5053663b5f15627953925e",
     "url": "/side-projects/index.html"
   },
   {
