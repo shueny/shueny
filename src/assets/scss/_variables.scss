@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC|Nunito');
+$dark-grey: #555555;
+$light-grey: #bfbfbf;
+$red: #ff3f3f;
+$blue: #3f72ff;
+$green: #00a916;
+$orange: #ffc561;
+$white: #ffffff;
+$font4: 4px;
+$font-family: "Nunito","Noto Sans TC", sans-serif;
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $font-family;
+}
+
+img {
+    width: 100%;
+}
+
+ul,
+li {
+  list-style: none;
+}
+.btn {
+  &:focus {
+    box-shadow: none;
+  }
+}
