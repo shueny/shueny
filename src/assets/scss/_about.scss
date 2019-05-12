@@ -1,0 +1,30 @@
+@import "@/assets/scss/_variables.scss";
+.aboutMe {
+    .header {
+        .title {
+            text-transform: uppercase;
+            font-size: 3.5rem;
+            font-weight: 500;
+        }
+        .subTitle {
+            background: $white;
+        }
+    }
+    .dot {
+        svg {
+            height: 0.4rem;
+            vertical-align: middle;
+        }
+    }
+
+    .progress {
+        height: 1.5rem;
+        // padding: 0 0.5rem;
+
+        .progress-bar {
+            &-striped {
+                background-color: lighten($dark-grey, 25%)!important;
+            }
+        }
+    }
+}
