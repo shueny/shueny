@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Meta from 'vue-meta'
 import Home from './views/Home.vue'
 
 Vue.use(Router)
+Vue.use(Meta)
 
 export default new Router({
   mode: 'history',
@@ -22,9 +24,9 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
-      path: '/todolist',
-      name: 'todolist',
-      component: () => import(/* webpackChunkName: "about" */ './views/TodoList.vue')
+      path: '/todo',
+      name: 'todo',
+      component: () => import(/* webpackChunkName: "about" */ './views/Todo.vue')
     }
   ]
 })

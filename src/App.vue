@@ -1,15 +1,11 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/todolist">Todo List</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
 
 <style lang="scss">
+@import '@/assets/scss/_normalize.scss';
 @import '@/assets/scss/_variables.scss';
 #app {
   -webkit-font-smoothing: antialiased;
@@ -17,14 +13,18 @@
   text-align: center;
   color: #2c3e50;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+</style>
+
+<script>
+export default {
+  name: 'App',
+  metaInfo: {
+    title: "Shueny's Vue",
+    // override the parent template and just use the above title only
+    titleTemplate: null,
+    link: [
+      { rel: 'favicon', href: 'favicon.ico' }
+    ]
   }
 }
-</style>
+</script>
