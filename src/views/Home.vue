@@ -1,7 +1,10 @@
 <template>
   <div class="home">
     <TopHead></TopHead>
-    <KV></KV>
+    <KVTyper title="Hi! I'm Shueny Wang"></KVTyper>
+    <!-- <KV></KV> -->
+    <AboutMe title="About Me."></AboutMe>
+    <Skills title="Skills." subTitle="技術"></Skills>
     <Works title="Work" subTitle="作品集"></Works>
     <!-- <HelloWorld title="Work" subTitle="作品集"></HelloWorld> -->
   </div>
@@ -12,12 +15,14 @@
 import TopHead from '@/components/TopHead.vue'
 // import HelloWorld from '@/components/HelloWorld.vue'
 import Works from '@/components/Works.vue'
-import KV from '@/components/KV.vue'
+import KVTyper from '@/components/KVTyper.vue'
+import AboutMe from '@/views/AboutMe.vue'
+import Skills from '@/components/Skills.vue'
 
-export default { 
+export default {
   name: 'home',
   components: {
-    TopHead, Works, KV
+    TopHead, Works, KVTyper, AboutMe, Skills
   },
   metaInfo: {
     title: "Shueny's Vue",

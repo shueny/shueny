@@ -19,12 +19,22 @@
 
     .progress {
         height: 1.5rem;
+        background-color: lighten($light-grey, 15%);
         // padding: 0 0.5rem;
 
         .progress-bar {
             &-striped {
                 background-color: lighten($dark-grey, 25%)!important;
             }
+        }
+    }
+    
+    .tags {
+        font-size: .75rem;
+        span {
+            height: 1.5rem;
+            border-radius: .25rem;
+            background-color: lighten($light-grey, 15%);
         }
     }
 }

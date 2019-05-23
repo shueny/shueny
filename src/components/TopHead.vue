@@ -16,7 +16,7 @@
             </router-link>
           </li>
           <li class="topHead-item topHead-item--right">
-            <a @click="showNav()"><font-awesome-icon icon="ellipsis-h" /></a>
+            <a @click="isActive = !isActive"><font-awesome-icon icon="ellipsis-h" /></a>
           </li>
         </ul>
       </div>
@@ -116,11 +116,6 @@ export default {
         }
       ]
     }
-  },
-  methods: {
-    showNav () {
-      this.isActive = !this.isActive
-    }
   }
 }
 </script>
@@ -172,6 +167,11 @@ export default {
       &:hover {
         background-color: darken($dark-grey, 10%);
         color: $white;
+      }
+      &.active {
+        i {
+          transform: rotate(90deg);
+        }
       }
     }
   }

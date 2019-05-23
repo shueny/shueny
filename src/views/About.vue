@@ -1,7 +1,8 @@
 <template>
   <div>
-    <div class="aboutMe">
-      <div class="container justify-content-center">
+    <TopHead></TopHead>
+    <div class="aboutMe pt-5">
+      <div class="container justify-content-center mt-5">
         <div class="header mb-2">
           <p class="line line-grey"><span class="subTitle col-md-4">The Resume of</span></p>
           <h1 class="title">
@@ -10,7 +11,6 @@
             <span class="ml-1">{{ enName }}</span>
           </h1>
           <Contact></Contact>
-          <Works></Works>
           <p class="line line-grey"></p>
         </div>
         <Skills title="技能"></Skills>
@@ -28,8 +28,9 @@
 
 <script>
 // @ is an alias to /src
+import TopHead from '@/components/TopHead.vue'
 import Contact from '@/components/Contact.vue'
-import Works from '@/components/Works.vue'
+// import Works from '@/components/Works.vue'
 import Skills from '@/components/Skills.vue'
 import ExperiencesList from '@/components/ExperiencesList.vue'
 import Education from '@/components/Education.vue'
@@ -38,8 +39,8 @@ import SpecialExperiences from '@/components/SpecialExperiences.vue'
 export default {
   name: 'about',
   components: {
+    TopHead,
     Contact,
-    Works,
     Skills,
     Education,
     ExperiencesList,

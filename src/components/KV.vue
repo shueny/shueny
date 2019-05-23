@@ -22,7 +22,7 @@
   <div class="kv" :style="{backgroundImage: 'url(' + imgPicBg + ')' }">
     <div class="container">
       <div class="row">
-        <div class="col-md-4 pt-5 text-left logo-name">
+        <div class="col-md-4 pt-5 text-left logo-name wow fadeInDown">
           <img class="" :src="imgName" alt="Shueny's CV">
         </div>
         <div class="col-md-4 my-auto ml-auto">
@@ -64,9 +64,18 @@
 </template>
 
 <script>
+import { WOW } from 'wowjs'
 import ImgPicBg from '../assets/images/header-bg.jpg'
 import ImgName from '../assets/images/logo-name.png'
 
+
+var wow = new WOW({
+  boxClass: 'wow',
+  animateClass: 'animated',
+  offset: 0,
+  mobile: true
+})
+wow.init()
 export default {
   name: 'KV',
   props: ['title', 'subTitle'],

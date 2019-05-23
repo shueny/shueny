@@ -83,6 +83,15 @@ li {
   }
 }
 
+h1 {
+  font-size: $font4*12;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: $font4*8;
+}
+
 .line {
   &-grey {
     height: $font4 * 5;

@@ -27,15 +27,11 @@
       </div> -->
     </div>
     <div class="contact-data">
-      <div class="view bg-img bg-img--big bg-img--me">
-          <img :src="img" class="img-fluid" alt="">
-          <div class="mask flex-center rgba-black-strong">
-              <p class="white-text">strong overlay</p>
-          </div>
-      </div>
-      <div class="bg-img bg-img--big bg-img--me" :style="{backgroundImage: 'url(' + img + ')' }">
-      </div>
-      <div class="contact-data--me col-md-5">
+      <div class="bg-img bg-img--me" :style="{backgroundImage: 'url(' + imgMe + ')' }"></div>
+      <!--
+        <div class="bg-img bg-img--big bg-img--me" :style="{backgroundImage: 'url(' + img + ')' }">
+      </div> -->
+      <!-- <div class="contact-data--me col-md-5">
         <h1 class="p-4">{{ msg }}</h1>
         <div class="row justify-content-start">
           <div v-for="(item, index) in contact" :key="item.index">
@@ -46,7 +42,7 @@
             <b class="dot mr-2" v-if="index === 0"><font-awesome-icon icon="circle" /></b>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <!-- <div class="container-fluid">
       <div class="row">
@@ -81,7 +77,7 @@ export default {
   },
   data () {
     return {
-      img: ImgMe,
+      imgMe: ImgMe,
       mask: ImgMask,
       imgBg: ImgPicBg,
       imgLogo2: ImgLogo2,
