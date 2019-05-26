@@ -1,19 +1,24 @@
 <template>
-  <div>
-    <h2> {{ title }}</h2>
+  <div class="education text-left">
+    <h1> {{ title }}</h1>
     <div class="exp-special">
-      <div class="exp-special-list" v-for='item in education' :key='item.index'>
-        <h5>{{ item.title }}</h5>
-        <h6> {{ item.department }}</h6>
-        <p class="during">{{ item.during }}</p>
-        <ul>
-          <li v-for='list in item.about' :key='list.index'>{{ list }}</li>
-        </ul>
-      </div>
+      <ul class="ul-list" v-for='item in education' :key='item.index'>
+        <li class="ul-list-item">
+          <h5>{{ item.title }}</h5>
+          <h6> {{ item.department }}</h6>
+          <p class="during">{{ item.during }}</p>
+          <ul>
+            <li v-for='list in item.about' :key='list.index'>{{ list }}</li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
+<style lang="scss" scoped>
+@import "@/assets/scss/_variables.scss";
+</style>
 <script>
 export default {
   name: 'Education',

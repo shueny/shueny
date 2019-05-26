@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-  faCircle, faMobileAlt, faEnvelope, faEllipsisH, faDesktop, faServer, faPalette, faTerminal
+  faCircle, faMobileAlt, faEnvelope, faEllipsisH, faDesktop, faServer, faPalette, faTerminal, faBars 
 } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/fontawesome-free-brands'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -20,7 +20,7 @@ import 'bootstrap/dist/css/bootstrap.min.css' // Import css file
 import 'wowjs/css/libs/animate.css'
 import 'animate.css'
 
-library.add(faCircle, faMobileAlt, faEnvelope, faGithub, faEllipsisH, faDesktop, faServer, faPalette, faTerminal)
+library.add(faCircle, faMobileAlt, faEnvelope, faGithub, faEllipsisH, faDesktop, faServer, faPalette, faTerminal, faBars)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
 Vue.use(Progress, BootstrapVue, Meta)

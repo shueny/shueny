@@ -124,7 +124,7 @@ export default {
 
 #nav {
   padding: 5rem 0 2.5rem;
-  background-color: rgba(darken($dark-grey, 30%), 0.7);
+  background-color: rgba(darken($dark-grey, 30%), 0.5);
   top: -100%;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
@@ -201,6 +201,15 @@ export default {
       height: 1rem;
     }
   }
+}
+
+.waypoint {
+  height: 500px;
+  background: #420983;
+}
+.waypoint p {
+  background: #42b983;
+  margin: 3px;
 }
 
 .sideMenu {

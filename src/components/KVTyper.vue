@@ -74,7 +74,6 @@ export default {
   background-color: $white;
   background-size: cover;
   background-position: center;
-  margin-top: 44px;
 
   a {
     color: $dark-grey;

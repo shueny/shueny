@@ -1,25 +1,23 @@
 <template>
-  <div>
-    <section class="work mt-4">
-      <h1>{{ title }}</h1>
-      <h2>{{ subTitle }}</h2>
-      <div class="container work_list mt-2">
-        <ul class="">
-          <div class="row mx-auto">
-            <li class="col-md-4 p-4 wow slideInUp" v-for="list in works" :key="list.index"
-            data-wow-duration="0.5s" data-wow-delay="0.5s">
-                <a :href="list.link">
-                  <img :src="list.image" :alt="list.title">
-                  <div class="text-left text">
-                    <h3 class="title mt-3">{{ list.title }}</h3>
-                    <span class="mb-2">{{ list.tags }}</span>
-                  </div>
-                </a>
-            </li>
-          </div>
-        </ul>
-      </div>
-    </section>
+  <div class="work section">
+    <h1>{{ title }}</h1>
+    <h2>{{ subTitle }}</h2>
+    <div class="container work_list mt-2">
+      <ul class="">
+        <div class="row mx-auto">
+          <li class="col-md-4 p-4 wow slideInUp" v-for="list in works" :key="list.index"
+          data-wow-duration="0.5s" data-wow-delay="0.5s">
+              <a :href="list.link">
+                <img :src="list.image" :alt="list.title">
+                <div class="text-left text">
+                  <h3 class="title mt-3">{{ list.title }}</h3>
+                  <span class="mb-2">{{ list.tags }}</span>
+                </div>
+              </a>
+          </li>
+        </div>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -80,7 +78,7 @@ $black: #000;
 $color_boulder_approx: #787878;
 .work {
   h1 {
-    font-size: $font4*8;
+    // font-size: $font4*8;
     font-weight: bold;
   }
   h2 {

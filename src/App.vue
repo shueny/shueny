@@ -19,7 +19,7 @@
 export default {
   name: 'App',
   metaInfo: {
-    title: "Shueny's Vue",
+    title: "Shueny's Resume",
     // override the parent template and just use the above title only
     titleTemplate: null,
     link: [

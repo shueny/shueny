@@ -1,12 +1,11 @@
 <template>
-  <div>
-    <h2> {{ title }}</h2>
+  <div class="experience text-left">
+    <h1 class="title"> {{ title }}</h1>
     <div class="experiences">
-      <ul class="exp-list">
-        <li class="item exp-list-item" v-for='item in experiences' :key='item.index'>
-          <p>{{ item.company }}</p>
-          <p>{{ item.title }}</p>
-          <p>{{ item.during }}</p>
+      <ul class="ul-list">
+        <li class="item ul-list-item wow slideInUp" v-for='item in experiences' :key='item.index'>
+          <h5>{{ item.title }} | {{ item.during }}</h5>
+          <h6>{{ item.company }}</h6>
           <ul class="doingList">
             <li class="item doingList-item" v-for='(item, index) in experiences' :key='item.index'>
               {{ item.list[index] }}
@@ -17,10 +16,14 @@
     </div>
   </div>
 </template>
+<style lang="scss" scoped>
+@import "@/assets/scss/_variables.scss";
+</style>
 
 <script>
 export default {
   name: 'ExperiencesList',
+  props: ['title'],
   data () {
     return {
       experiences: [

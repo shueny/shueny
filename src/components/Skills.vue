@@ -1,11 +1,11 @@
 <template>
-  <div class="skill">
+  <div class="skill section section-bg">
     <div class="container">
       <h1>{{ title }}</h1>
       <h2>{{ subTitle }}</h2>
       <div class="row my-4">
         <div class="col-md-6 mb-4 wow bounceIn animated" v-for="(item, index) in skills" :key='item.index' style="height: 20rem;">
-          <div class="skill-item p-5">
+          <div class="skill-item">
             <span class="icon d-inline-block mb-3">
               <font-awesome-icon :icon="item.icon"/>
             </span>
@@ -112,14 +112,28 @@
 @import "@/assets/scss/_variables.scss";
 
 .skill {
+  > .container {
+    @include pad-width() {
+      min-width: 770px;
+    }
+  }
   &-item {
     height: 100%;
     background: $white;
-    -webkit-box-shadow: 0px 10px 30px -8px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 10px 30px -8px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px $font4 $font4*2 -$font4*2 rgba(0, 0, 0, 0.1);
+    box-shadow: 0px $font4 $font4*4 -$font4*2 rgba(0, 0, 0, 0.1);
     border-radius: $font4*2;
     -webkit-transition: all .5s;
     transition: all .5s;
+    padding: $font4*10;
+    
+    @include pad-width() {
+      padding: $font4*5;
+    }
+    
+    @include phone-width() {
+      padding: $font4*5;
+    }
 
     .icon {
       font-size: $font4*6;

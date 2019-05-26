@@ -1,5 +1,6 @@
 <template>
-    <div class="aboutMe p-5">
+    <div class="aboutMe section">
+      <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-6">
                 <div class="about-content text-left">
@@ -14,6 +15,7 @@
             <div class="col-xs-12 col-md-6">
             </div>
         </div>
+      </div>
     </div>
 </template>
 <style lang="scss" scoped>

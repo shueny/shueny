@@ -84,12 +84,12 @@ li {
 }
 
 h1 {
-  font-size: $font4*12;
-  font-weight: bold;
+  font-size: $font4*12 !important;
+  font-weight: bold!important;
 }
 
 h2 {
-  font-size: $font4*8;
+  font-size: $font4*8!important;
 }
 
 .line {
@@ -145,6 +145,49 @@ h2 {
 
     @include phone-width {
       padding:0px;
+    }
+  }
+}
+
+.section {
+  padding: $font4*10 0;
+
+  &-bg {
+    background-color: lighten($light-grey, 20%);
+  }
+}
+
+.ul-list {
+  padding-left: $font4*5;
+
+  &-item {
+    position: relative;
+    margin-bottom: $font4*4;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: $font4*2;
+      height: $font4*2;
+      background-color: darken($light-grey, 30%);
+      border-radius: 50%;
+      top: $font4*2;
+      left: -($font4*5);
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 1px;
+      height: calc(100% + 8px);
+      top: $font4*4;
+      left: -($font4*4);
+      background-color: darken($light-grey, 30%);
+    }
+
+    &:last-child {
+      &::after {
+        height: calc(100% - 8px);
+      }
     }
   }
 }
