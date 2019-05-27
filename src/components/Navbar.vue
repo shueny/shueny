@@ -1,7 +1,7 @@
 <template>
     <div class="nav-wrapper effect" :class="{ 'nav-sticky': !showNavbar }">
         <nav class="navbar-custom">
-            <router-link to="/" class="navbar-brand effect px-2 font-weight-bold">Shueny</router-link>
+            <router-link to="/" class="navbar-brand effect font-weight-bold">Shueny</router-link>
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bm-navbar" aria-expanded="false">
@@ -9,14 +9,14 @@
                     <font-awesome-icon icon="bars" />
                 </button>
             </div>
-            <div class="navbar-collapse navbar-right" id="bm-navbar" aria-expanded="false">
-                <ul class="nav navbar-nav">
-                    <li class="mx-2" v-for="(item, index) in sectionLink" :key='item.index'>
-                        <a :href="'#'+ item.item.toLowerCase()" class="scroll effect p-2" data-speed="800" :class="{'active': item.index === 0}">{{ item.item }}</a>
-                    </li>
-                </ul>
-            </div>
         </nav>
+        <div class="navbar-collapse navbar-right effect in" id="bm-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+                <li class="" v-for="(item, index) in sectionLink" :key='item.index'>
+                    <a :href="'#'+ item.item.toLowerCase()" class="scroll effect p-2" data-speed="800" :class="{'active': item.index === 0}">{{ item.item }}</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 <script>
@@ -98,10 +98,10 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/_variables.scss";
 .effect {
-    -webkit-transition: all .4s ease-in-out;
-    -moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
 .nav-wrapper {
@@ -111,13 +111,21 @@ export default {
 	top: 0;
 	left: 0;
   background-color: transparent;
-  padding: $font4 $font4*2;
 	z-index: 20;
 	.navbar {
 		position: relative;
 		min-height: 50px;
+    &-brand {
+      display: block;
+      font-weight: 700;
+      color: $dark-grey;
+      float: left;
+      padding: $font4 ($font4*4 - 1px);
+    }
     &-custom {
       color: $white;
+      height: $font4*11;
+
       a {
         color: $white;
         font-size: $font4*6;
@@ -134,7 +142,8 @@ export default {
         color: $dark-grey;
         display: inline-block;
         @include phone-width() {
-          display: block;
+          display: block;          
+          background-color: rgba($dark-grey, 0.8);
         }
         a {
           color: $dark-grey;
@@ -143,10 +152,44 @@ export default {
           }
         }
       }
+      @include phone-width() {
+        display: block;
+      }
     }
+    &-container-right {
+      position:relative;
+      right:0;
+      transition:right .4s;
+
+      &-out{
+        right:70%;
+      }
+
+    }
+    
     &-right {
+      width: 100%;
+      height: 100%;
+      top: $font4*11;
+      bottom: 0;
+      right: 0;
+      overflow: hidden;
+      transition: all .4s ease-in-out;
+      position: absolute;
+      top: $font4;
       text-align: right;
+      padding-right: $font4*4;
+      &-in {
+        width:0;
+      }
+      @include phone-width() {
+        position: fixed;
+        padding: 0;
+        top: $font4*11;
+        text-align: center;
+      }
     }
+
     &-toggle {
       position: relative;
       float: right;
@@ -157,15 +200,13 @@ export default {
       background-image: none;
       border: 1px solid transparent;
       border-radius: 4px;
+      padding-top: $font4;
+      .svg-inline--fa {
+        font-size: $font4*5;
+      }
     }
 	}
-	.navbar-brand {
-		display: block;
-		font-weight: 700;
-		color: $dark-grey;
-		float: left;
-    padding: 0 $font4;
-	}
+
 	.nav {
 		li {
       color: $white;
@@ -206,6 +247,7 @@ export default {
   box-shadow: 0px -1px $font4*2 rgba(0,0,0,0.2);
 	.navbar {
     &-custom {
+      background-color: $white;
       a {
         color: $dark-grey;
       }
@@ -234,18 +276,26 @@ export default {
   width: 100%;
   text-align: right;
 
-  button {
-
-  }
 }
 #bm-navbar {
+  transition: all .4s ease-in-out;
   @include phone-width() {
     display: none;
+    transition: all .4s ease-in-out;
   }
 
   &.show {
+  transition: all .4s ease-in-out;
+    .nav {
+      li {
+        a {
+          color: $white;
+        }
+      }
+    }
     @include phone-width() {
       display: block;
+      transition: all .4s ease-in-out;
     }
   }
 }

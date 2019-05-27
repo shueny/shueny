@@ -86,10 +86,16 @@ li {
 h1 {
   font-size: $font4*12 !important;
   font-weight: bold!important;
+  @include phone-width() {
+    font-size: $font4*10!important;
+  }
 }
 
 h2 {
   font-size: $font4*8!important;
+  @include phone-width() {
+    font-size: $font4*6!important;
+  }
 }
 
 .line {
