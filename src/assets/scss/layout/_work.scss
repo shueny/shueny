@@ -1,0 +1,29 @@
+@import '@/assets/scss/base/_variables.scss';
+.work {
+  h1 {
+    // font-size: $font4*8;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: $font4*4;
+  }
+  &_list {
+    .row {
+      h3{
+        font-weight: normal;
+        font-size: 1rem;
+        color: $dark-grey;
+      }
+      span{
+        display: block;
+        font-size: 0.75rem;
+        color: lighten($dark-grey, 15%);
+      }
+      li {
+        &:hover {
+          box-shadow: 0px -1px $font4*2 rgba(0,0,0,0.2);
+        }
+      }
+    }
+  }
+}

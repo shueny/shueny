@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC|Nunito');
+$dark-grey: #333333;
+$light-grey: #bfbfbf;
+$red: #ff3f3f;
+$pink: #e45a6a;
+$dark-blue: #35455D;
+$blue: #3f72ff;
+$green: #00a916;
+$orange: #faa64d;
+$mango: #FFCC22;
+$white: #ffffff;
+$font4: 4px;
+$font-family: "Nunito","Noto Sans TC", sans-serif;
+
+$pc-media: 960px;
+$pcs-media: 959px;
+$pad-media: 760px;
+$pads-media: 759px;
+$phone-media: 480px;
+$phones-media: 479px;
+
+//電腦
+@mixin pc-width() {
+  @media all and (min-width: $pc-media) {
+    @content;
+  }
+}
+//平板
+@mixin pad-width() {
+  @media all and (min-width:$pad-media) and (max-width: $pcs-media) {
+    @content;
+  }
+}
+//小平板
+@mixin small-pad-width() {
+  @media all and (min-width: $phone-media) and (max-width:$pads-media) {
+    @content;
+  }
+}
+//手機
+@mixin phone-width() {
+  @media all and (max-width: $phones-media) {
+    @content;
+  }
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  @media (max-width: 768px) {
+      font-size: 12px;
+  }
+}
+
+body,
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+p, #app {
+  font-family: $font-family;
+  color: $dark-grey;
+}
+
+a {
+  display: block;
+  cursor: pointer;
+  &:hover {
+    color: $dark-grey;
+  }
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+ul,
+li {
+  list-style: none;
+  padding-left: 0;
+}
+.btn {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+h1 {
+  font-size: $font4*12 !important;
+  font-weight: bold!important;
+  @include phone-width() {
+    font-size: $font4*10!important;
+  }
+}
+
+h2 {
+  font-size: $font4*8!important;
+  @include phone-width() {
+    font-size: $font4*6!important;
+  }
+}
+
+.line {
+  &-grey {
+    height: $font4 * 5;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: $dark-blue;
+      left: 0;
+      top: 49%; 
+    }
+  }
+}
+
+.btn {
+  &-link {
+    color: $dark-grey;
+    &:hover {
+      text-decoration: underline;
+      color: inherit;
+      // color: $white;
+      // background-color: lighten($dark-blue, 55%);
+    }
+  }
+}
+
+.bg {
+  &-img {
+    height: $font4*90;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: $mango;
+    overflow: hidden;
+    position: relative;
+
+    &--big {
+      height: 600px;
+      background-position: center center;
+    }
+
+    .bg-cover {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba(255,255,255, 0.5);
+    }
+
+    @include phone-width {
+      padding:0px;
+    }
+  }
+}
+
+.section {
+  padding: $font4*10 0;
+
+  &-bg {
+    background-color: lighten($light-grey, 20%);
+  }
+}
+
+.ul-list {
+  padding-left: $font4*5;
+
+  &-item {
+    position: relative;
+    margin-bottom: $font4*4;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: $font4*2;
+      height: $font4*2;
+      background-color: darken($light-grey, 30%);
+      border-radius: 50%;
+      top: $font4*2;
+      left: -($font4*5);
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 1px;
+      height: calc(100% + 8px);
+      top: $font4*4;
+      left: -($font4*4);
+      background-color: darken($light-grey, 30%);
+    }
+
+    &:last-child {
+      &::after {
+        height: calc(100% - 8px);
+      }
+    }
+  }
+}
+
+.spaceWrapperContainer {
+  position: relative;
+  .spaceWrapper {
+    height: $font4*11;
+    position: absolute;
+    top: -($font4*11);
+  }
+}

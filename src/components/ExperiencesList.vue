@@ -1,13 +1,14 @@
 <template>
-  <div class="experience text-left">
+  <div class="experience text-left spaceWrapperContainer">
+    <div id="experience" class="spaceWrapper"></div>
     <h1 class="title"> {{ title }}</h1>
-    <div class="experiences">
+    <div class="">
       <ul class="ul-list">
         <li class="item ul-list-item wow slideInUp" v-for='item in experiences' :key='item.index'>
           <h5>{{ item.title }} | {{ item.during }}</h5>
           <h6>{{ item.company }}</h6>
-          <ul class="doingList">
-            <li class="item doingList-item" v-for='(item, index) in experiences' :key='item.index'>
+          <ul class="ul-list--inner">
+            <li class="item" v-for='(item, index) in experiences' :key='item.index'>
               {{ item.list[index] }}
             </li>
           </ul>
@@ -17,7 +18,7 @@
   </div>
 </template>
 <style lang="scss" scoped>
-@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/base/_variables.scss";
 </style>
 
 <script>

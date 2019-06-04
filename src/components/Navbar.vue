@@ -1,5 +1,5 @@
 <template>
-    <div class="nav-wrapper effect" :class="{ 'nav-sticky': !showNavbar }">
+    <div class="nav-wrapper effect" :class="{ 'nav-sticky': showNavbar }">
         <nav class="navbar-custom">
             <router-link to="/" class="navbar-brand effect font-weight-bold">Shueny</router-link>
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -12,9 +12,11 @@
         </nav>
         <div class="navbar-collapse navbar-right effect in" id="bm-navbar" aria-expanded="false">
             <ul class="nav navbar-nav">
-                <li class="" v-for="(item, index) in sectionLink" :key='item.index'>
-                    <a :href="'#'+ item.item.toLowerCase()" class="scroll effect p-2" data-speed="800" :class="{'active': item.index === 0}">{{ item.item }}</a>
-                </li>
+              <li :id="'nav-'+item.link.toLowerCase()" class="" v-for="(item, index) in sectionLink" :key='index'>
+                <a :href="'#'+ item.link.toLowerCase()" class="scroll effect p-2"
+                :data-speed="item.scrollSpeed"
+                :class="{'active' : (item.link.toLowerCase() === data) }">{{ item.item }}</a>
+              </li>
             </ul>
         </div>
     </div>
@@ -26,9 +28,10 @@ import ImgLogoS from '../assets/images/Shueny.png'
 
 export default {
   name: 'NavBar',
+  props: ['data'],
   data () {
     return {
-      showNavbar: true,
+      showNavbar: false,
       lastScrollPosition: 0,
       isActive: false,
       imgLogo: ImgLogo,
@@ -48,27 +51,33 @@ export default {
       ],
       sectionLink: [
         {
-          item:'About',
+          item: 'About',
+          link: 'About',
           scrollSpeed: 800
         },
         {
           item: 'Skill',
+          link: 'Skill',
           scrollSpeed: 800
         },
         {
-          item:'Work',
+          item: 'Work',
+          link: 'Work',
           scrollSpeed: 1400
         },
         {
-          item: 'Experience',
+          item: 'Experience & Education',
+          link: 'experienceAndEducation',
           scrollSpeed: 1400
         },
         {
-          item:'Sepcial',
+          item: 'Sepcial',
+          link: 'Sepcial',
           scrollSpeed: 1700
         },
         {
           item: 'Contact',
+          link: 'Contact',
           scrollSpeed: 1700
         }
       ]
@@ -82,221 +91,18 @@ export default {
   },
   methods: {
     onScroll () {
+      // const sectionBlock = Object.values(this.sectionLink).map(item => item.item.toLowerCase())
       const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
+      const kvTyperHeight = document.getElementById('kvTyper').offsetHeight
       if (currentScrollPosition < 0) {
-        return
+        return this.showNavbar = false
       }
-      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
-        return
+      if (currentScrollPosition < kvTyperHeight) {
+        return this.showNavbar = false
       }
-      this.showNavbar = currentScrollPosition < this.lastScrollPosition
+      this.showNavbar = currentScrollPosition > kvTyperHeight
       this.lastScrollPosition = currentScrollPosition
     }
   }
 }
 </script>
-<style lang="scss" scoped>
-@import "@/assets/scss/_variables.scss";
-.effect {
-  -webkit-transition: all .4s ease-in-out;
-  -moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-}
-
-.nav-wrapper {
-  height: $font4*11;
-	width: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-  background-color: transparent;
-	z-index: 20;
-	.navbar {
-		position: relative;
-		min-height: 50px;
-    &-brand {
-      display: block;
-      font-weight: 700;
-      color: $dark-grey;
-      float: left;
-      padding: $font4 ($font4*4 - 1px);
-    }
-    &-custom {
-      color: $white;
-      height: $font4*11;
-
-      a {
-        color: $white;
-        font-size: $font4*6;
-      }
-      img {
-        width: auto;
-        height: $font4*9;
-        max-height: $font4*10;
-      }
-    }
-    &-nav {
-      display: inline-block;
-      li {
-        color: $dark-grey;
-        display: inline-block;
-        @include phone-width() {
-          display: block;          
-          background-color: rgba($dark-grey, 0.8);
-        }
-        a {
-          color: $dark-grey;
-          &::after {
-            background-color: $dark-grey;
-          }
-        }
-      }
-      @include phone-width() {
-        display: block;
-      }
-    }
-    &-container-right {
-      position:relative;
-      right:0;
-      transition:right .4s;
-
-      &-out{
-        right:70%;
-      }
-
-    }
-    
-    &-right {
-      width: 100%;
-      height: 100%;
-      top: $font4*11;
-      bottom: 0;
-      right: 0;
-      overflow: hidden;
-      transition: all .4s ease-in-out;
-      position: absolute;
-      top: $font4;
-      text-align: right;
-      padding-right: $font4*4;
-      &-in {
-        width:0;
-      }
-      @include phone-width() {
-        position: fixed;
-        padding: 0;
-        top: $font4*11;
-        text-align: center;
-      }
-    }
-
-    &-toggle {
-      position: relative;
-      float: right;
-      margin-top: 8px;
-      margin-right: 15px;
-      margin-bottom: 8px;
-      background-color: transparent;
-      background-image: none;
-      border: 1px solid transparent;
-      border-radius: 4px;
-      padding-top: $font4;
-      .svg-inline--fa {
-        font-size: $font4*5;
-      }
-    }
-	}
-
-	.nav {
-		li {
-      color: $white;
-      a {
-        position: relative;
-        font-size: 13px;
-        font-weight: 700;
-        color: $white;
-
-        &::after {
-          content: "";
-          position: absolute;
-          width: 0;
-          height: 2px;
-          bottom: 6px;
-          left: 10%;
-          background-color: $white;
-          //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-          transition: all .28s ease-in-out;
-        }
-        &:hover {
-          background-color: transparent;
-          text-decoration: none;
-
-          &::after {
-            width: 80%;
-          }
-        }
-      }
-    }
-	}
-	.navbar-toggle .icon-bar {
-		background-color: $white;
-	}
-}
-.nav-sticky {
-	background-color: $white !important;
-  box-shadow: 0px -1px $font4*2 rgba(0,0,0,0.2);
-	.navbar {
-    &-custom {
-      background-color: $white;
-      a {
-        color: $dark-grey;
-      }
-    }
-	}
-  .nav {
-    li {
-      a {
-        color: $dark-grey;
-      }
-    }
-  }
-  .navbar {
-    &-toggle {
-      color: $dark-grey;
-    }
-  }
-}
-
-.navbar-header {
-  display: none;
-  @include phone-width() {
-    display: block;
-  }
-
-  width: 100%;
-  text-align: right;
-
-}
-#bm-navbar {
-  transition: all .4s ease-in-out;
-  @include phone-width() {
-    display: none;
-    transition: all .4s ease-in-out;
-  }
-
-  &.show {
-  transition: all .4s ease-in-out;
-    .nav {
-      li {
-        a {
-          color: $white;
-        }
-      }
-    }
-    @include phone-width() {
-      display: block;
-      transition: all .4s ease-in-out;
-    }
-  }
-}
-</style>

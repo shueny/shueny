@@ -23,7 +23,7 @@
 </template>
 
 <style lang="scss" scope>
-@import '@/assets/scss/_about.scss';
+@import '@/assets/scss/layout/_about.scss';
 </style>
 
 <script>

@@ -20,12 +20,16 @@ import 'bootstrap/dist/css/bootstrap.min.css' // Import css file
 import 'wowjs/css/libs/animate.css'
 import 'animate.css'
 
+// eslint-disable-next-line max-len
 library.add(faCircle, faMobileAlt, faEnvelope, faGithub, faEllipsisH, faDesktop, faServer, faPalette, faTerminal, faBars)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
-Vue.use(Progress, BootstrapVue, Meta)
+Vue.use(Progress)
+Vue.use(BootstrapVue)
+Vue.use(Meta)
 // mount with global
-Vue.use(VueWow, VueWaypoint)
+Vue.use(VueWow)
+Vue.use(VueWaypoint)
 new Vue({
   router,
   store,

@@ -1,13 +1,24 @@
 <template>
-  <div class="home">
-    <NavBar></NavBar>
+  <div id="home" class="home">
+    <NavBar :data="this.activeBlock"></NavBar>
     <!-- <TopHead></TopHead> -->
     <KVTyper title="Hi! I'm Shueny Wang"></KVTyper>
     <!-- <KV></KV> -->
-    <AboutMe title="About Me."></AboutMe>
-    <Skills title="Skills." subTitle="技術"></Skills>
-    <Works title="Work" subTitle="作品集"></Works>
-    <div class="section section-bg">
+    <div class="waypoint"
+        v-waypoint="{ active: true, callback: logOne }" id="about">
+      <AboutMe title="About Me."></AboutMe>
+    </div>
+    <div class="waypoint"
+         v-waypoint="{ active: true, callback: logOne }" id="skill">
+      <Skills title="Skills." subTitle="技術"></Skills>
+    </div>
+    <div class="waypoint"
+         v-waypoint="{ active: true, callback: logOne }" id="work">
+      <Works title="Work" subTitle="作品集"></Works>
+    </div>
+    
+    <div class="section section-bg waypoint"
+    v-waypoint="{ active: true, callback: logOne }" id="experienceandeducation">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
@@ -19,13 +30,15 @@
         </div>
       </div>
     </div>
+    <!-- <div class="waypoint"
+            v-waypoint="{ active: true, callback: onWaypoint, options: intersectionOptions }" id="contact">
+    </div> -->
     <!-- <HelloWorld title="Work" subTitle="作品集"></HelloWorld> -->
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import TopHead from '@/components/TopHead.vue'
 import NavBar from '@/components/Navbar.vue'
 // import HelloWorld from '@/components/HelloWorld.vue'
 import Works from '@/components/Works.vue'
@@ -34,11 +47,22 @@ import AboutMe from '@/views/AboutMe.vue'
 import Skills from '@/components/Skills.vue'
 import Education from '@/components/Education.vue'
 import ExperiencesList from '@/components/ExperiencesList.vue'
+import VueWaypoint from 'vue-waypoint'
+
+import { WOW } from 'wowjs'
+
+const wow = new WOW({
+  boxClass: 'wow',
+  animateClass: 'animated',
+  offset: 0,
+  mobile: true
+})
+wow.init()
 
 export default {
   name: 'home',
   components: {
-    NavBar, TopHead, Works, KVTyper, AboutMe, Skills, Education, ExperiencesList
+    NavBar, Works, KVTyper, AboutMe, Skills, Education, ExperiencesList
   },
   metaInfo: {
     title: "Shueny's Vue",
@@ -47,6 +71,28 @@ export default {
     link: [
       { rel: 'favicon', href: 'favicon.ico' }
     ]
+  },
+  data () {
+    return {
+      intersectionOptions: {
+        root: document.querySelector('#home'),
+        rootMargin: '0px 0px 0px 0px',
+        threshold: 0
+      },
+      activeBlock: 'about'
+    }
+  },
+  methods: {
+    logOne ({ el, going, direction }) {
+      let activeEl = el.getAttribute('id')
+      if (going === 'in') {
+        this.activeBlock = el.getAttribute('id')
+        document.getElementById(activeEl).classList.add('active')
+      }
+      if (going === 'out') {
+        document.getElementById(activeEl).classList.remove('active')
+      }
+    }
   }
 }
 </script>

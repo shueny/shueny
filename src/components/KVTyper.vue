@@ -1,5 +1,5 @@
 <template>
-  <div class="kv kv-typer" :style="{backgroundImage: 'url(' + imgPicBg + ')' }">
+  <div id="kvTyper" class="kv kv-typer" :style="{backgroundImage: 'url(' + imgPicBg + ')' }">
     <div class="page-table">
       <div class="table-cell text-center">
         <div class="container">
@@ -64,7 +64,7 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/base/_variables.scss";
 
 .kv {
   width: 100%;

@@ -120,7 +120,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/base/_variables.scss";
 
 #nav {
   padding: 5rem 0 2.5rem;

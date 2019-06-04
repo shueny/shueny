@@ -11,7 +11,7 @@
     </div>
 </template>
 <style lang="scss" scoped>
-@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/base/_variables.scss";
 
 .social-icon {
   &-item {

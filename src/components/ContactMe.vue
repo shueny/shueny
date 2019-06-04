@@ -30,12 +30,12 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/base/_variables.scss";
 
 .contactMe {
-    svg {
-        width: $font4*4;
-        text-align: center;
-    }
+  svg {
+    width: $font4*4;
+    text-align: center;
+  }
 }
 </style>

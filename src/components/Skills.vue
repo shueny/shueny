@@ -1,5 +1,6 @@
 <template>
-  <div class="skill section section-bg">
+  <div class="skill section section-bg spaceWrapperContainer">
+    <div id="skill" class="spaceWrapper"></div>
     <div class="container">
       <h1>{{ title }}</h1>
       <h2>{{ subTitle }}</h2>
@@ -109,72 +110,9 @@
 </template>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/_variables.scss";
-
-.skill {
-  > .container {
-    @include pad-width() {
-      min-width: 770px;
-    }
-  }
-  &-item {
-    height: 100%;
-    background: $white;
-    -webkit-box-shadow: 0px $font4 $font4*2 -$font4*2 rgba(0, 0, 0, 0.1);
-    box-shadow: 0px $font4 $font4*4 -$font4*2 rgba(0, 0, 0, 0.1);
-    border-radius: $font4*2;
-    -webkit-transition: all .5s;
-    transition: all .5s;
-    padding: $font4*10;
-    
-    @include pad-width() {
-      padding: $font4*5;
-    }
-    
-    @include phone-width() {
-      padding: $font4*5;
-    }
-
-    .icon {
-      font-size: $font4*6;
-      width: $font4*17;
-      height: $font4*17;
-      line-height: $font4*17;
-      background: lighten($light-grey, 20%);
-      border-radius: 50%;
-      -webkit-transition: all .5s;
-      transition: all .5s;
-    }
-
-    &:hover {
-      transform: scale(1.1);
-      .icon {
-        background: $dark-grey;
-        color: $white;
-      }
-    }
-  }
-}
-.line {
-  &-s {
-    width: $font4*10;
-    height: 1px;
-    background-color: $dark-grey;
-  }
-}
 </style>
 
 <script>
-import { WOW } from 'wowjs'
-
-var wow = new WOW({
-  boxClass: 'wow',
-  animateClass: 'animated',
-  offset: 0,
-  mobile: true
-})
-wow.init()
-
 export default {
   name: 'Skills',
   props: {

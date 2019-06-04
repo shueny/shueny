@@ -1,0 +1,46 @@
+@import './minxin';
+
+$xs: 767px;
+$sm: 768px;
+$md: 992px;
+$lg: 1200px;
+
+@media (max-width: $xs) {
+    @for $i from 1 through 12 {
+        .grid-xs-#{$i} {
+            width: 100% / 12 * $i;
+            float: left;
+            @include border-box;
+        }
+    }
+}
+
+@media (min-width: $sm) {
+    @for $i from 1 through 12 {
+        .grid-sm-#{$i} {
+            width: 100% / 12 * $i;
+            float: left;
+            @include border-box;
+        }
+    }
+}
+
+@media (min-width: $md) {
+    @for $i from 1 through 12 {
+        .grid-md-#{$i} {
+            width: 100% / 12 * $i;
+            float: left;
+            @include border-box;
+        }
+    }
+}
+
+@media (min-width: $lg) {
+    @for $i from 1 through 12 {
+        .grid-lg-#{$i} {
+            width: 100% / 12 * $i;
+            float: left;
+            @include border-box;
+        }
+    }
+}

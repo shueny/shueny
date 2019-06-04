@@ -1,14 +1,15 @@
 <template>
-  <div class="education text-left">
-    <h1> {{ title }}</h1>
+  <div class="education text-left spaceWrapperContainer">
+    <div id="education" class="spaceWrapper"></div>
+    <h1 class="title"> {{ title }}</h1>
     <div class="exp-special">
-      <ul class="ul-list" v-for='item in education' :key='item.index'>
-        <li class="ul-list-item">
-          <h5>{{ item.title }}</h5>
-          <h6> {{ item.department }}</h6>
+      <ul class="ul-list">
+        <li class="item ul-list-item wow slideInUp" v-for='item in education' :key='item.index'>
+          <h5>{{ item.department }} | {{ item.during }}</h5>
+          <h6>{{ item.title }}</h6>
           <p class="during">{{ item.during }}</p>
-          <ul>
-            <li v-for='list in item.about' :key='list.index'>{{ list }}</li>
+          <ul class="ul-list--inner">
+            <li class="item" v-for='list in item.about' :key='list.index'>{{ list }}</li>
           </ul>
         </li>
       </ul>
@@ -17,7 +18,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/base/_variables.scss";
 </style>
 <script>
 export default {
