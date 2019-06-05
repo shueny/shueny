@@ -69,17 +69,18 @@ export default {
           item: 'Experience & Education',
           link: 'experienceAndEducation',
           scrollSpeed: 1400
-        },
-        {
-          item: 'Sepcial',
-          link: 'Sepcial',
-          scrollSpeed: 1700
-        },
-        {
-          item: 'Contact',
-          link: 'Contact',
-          scrollSpeed: 1700
         }
+        // ,
+        // {
+        //   item: 'Sepcial',
+        //   link: 'Sepcial',
+        //   scrollSpeed: 1700
+        // },
+        // {
+        //   item: 'Contact',
+        //   link: 'Contact',
+        //   scrollSpeed: 1700
+        // }
       ]
     }
   },

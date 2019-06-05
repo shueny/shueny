@@ -118,7 +118,7 @@ h2 {
 
 .btn {
   &-link {
-    color: $dark-grey;
+    color: $dark-grey!important;
     &:hover {
       text-decoration: underline;
       color: inherit;
@@ -164,6 +164,10 @@ h2 {
   }
 }
 
+.subTitle {
+  margin-bottom: $font4*10;
+}
+
 .ul-list {
   padding-left: $font4*5;
 
@@ -197,6 +201,28 @@ h2 {
       }
     }
   }
+
+  &--none {
+    margin-top: $font4*5;
+    padding: 0;
+    height: auto;
+
+    li {
+      font-size: $font4*3;
+      color: lighten($dark-grey, 25%);
+      margin-bottom: $font4;
+
+      &::before {
+        position: relative;
+        background-color: transparent;
+      }
+
+      &::after {
+        position: relative;
+        background-color: transparent;
+      }
+    }
+  }
 }
 
 .spaceWrapperContainer {
@@ -205,5 +231,13 @@ h2 {
     height: $font4*11;
     position: absolute;
     top: -($font4*11);
+  }
+}
+
+.u-mobile-only {
+  display: none;
+
+  @include phone-width() {
+    display: block;
   }
 }

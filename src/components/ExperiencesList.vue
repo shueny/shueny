@@ -1,7 +1,8 @@
 <template>
   <div class="experience text-left spaceWrapperContainer">
     <div id="experience" class="spaceWrapper"></div>
-    <h1 class="title"> {{ title }}</h1>
+    <h1 class="title">{{ title }}</h1>
+    <h2 class="subTitle">{{ subTitle }}</h2>
     <div class="">
       <ul class="ul-list">
         <li class="item ul-list-item wow slideInUp" v-for='item in experiences' :key='item.index'>
@@ -24,7 +25,7 @@
 <script>
 export default {
   name: 'ExperiencesList',
-  props: ['title'],
+  props: ['title', 'subTitle'],
   data () {
     return {
       experiences: [

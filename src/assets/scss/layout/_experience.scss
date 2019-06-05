@@ -1,0 +1,16 @@
+@import '@/assets/scss/base/_variables.scss';
+.ul-list {
+    h5 {
+        font-weight: 500;
+    }
+    h6 {
+        margin-bottom: $font4*3;
+    }
+    &--inner {
+        li {
+            font-size: $font4*3;
+            margin-bottom: $font4;
+            letter-spacing: 0.5px;
+        }
+    }
+}

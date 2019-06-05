@@ -37,4 +37,7 @@
             background-color: lighten($light-grey, 15%);
         }
     }
+    .description {
+        font-size: $font4*4;
+    }
 }

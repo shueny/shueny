@@ -2,10 +2,10 @@
   <div class="skill section section-bg spaceWrapperContainer">
     <div id="skill" class="spaceWrapper"></div>
     <div class="container">
-      <h1>{{ title }}</h1>
-      <h2>{{ subTitle }}</h2>
+    <h1 class="title">{{ title }}</h1>
+    <h2 class="subTitle">{{ subTitle }}</h2>
       <div class="row my-4">
-        <div class="col-md-6 mb-4 wow bounceIn animated" v-for="(item, index) in skills" :key='item.index' style="height: 20rem;">
+        <div class="col-md-6 mb-4 wow bounceIn animated" v-for="(item, index) in skills" :key='item.index'>
           <div class="skill-item">
             <span class="icon d-inline-block mb-3">
               <font-awesome-icon :icon="item.icon"/>
@@ -17,7 +17,13 @@
                 {{ skillItem }}{{ (index+1 < item.skillList.length) ? ', ' : '' }}
               </span>
             </h6>
-            <p class="skill-item-text">{{ item.info }}</p>
+            <div class="skill-item-text">
+              <ul class="ul-list ul-list--none">
+                <li class="item ul-list-item" v-for="listItem in item.info">
+                  {{ listItem }}
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -109,9 +115,6 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-</style>
-
 <script>
 export default {
   name: 'Skills',
@@ -128,25 +131,42 @@ export default {
           icon: 'desktop',
           title: 'Frontend Development',
           skillList: ['HTML5', 'CSS3', 'JavaScript(ES6)', 'jQuery', 'Liquid', 'Vue.js', 'React'],
-          info: '說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明'
+          info: [
+            '使用 HTML5、CSS3、SCSS 獨立切版或套用 Bootstrap',
+            '搭配 JavaScript 或 jQuery 製作各式動畫效果',
+            '熟悉 Liquid 語法，開發各種樣版或新功能、新畫面',
+            '以 Ajax 串接 API 資料',
+            '尚懂 Vue.js，目標學習建置各小型專案來更熟悉 Vue.js ',
+            '曾學習過 React'
+          ]
         },
         {
           icon: 'server',
           title: 'Backend Development',
           skillList: ['Node.js', 'Express.js', 'MongoDB', 'PHP', 'MySQL'],
-          info: '說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明'
+          info: [
+            '曾經學習過及使用過 PHP & MySQL',
+            '目前學習並使用 Node.js, Express.js, MongoDB 來建置小型專案'
+          ]
         },
         {
           icon: 'palette',
           title: 'Web Design',
           skillList: ['Photoshop', 'Illustrator', 'Adobe XD'],
-          info: '說明說明說明說明說明說明說明說明說明'
+          info: [
+            '使用 Ps 進行圖片處理，製作簡易網頁廣告、gif 等',
+            '使用 Ai 處理向量格式圖形、繪製向量圖檔、SVG 等',
+            'Adobe XD 製作基本的 wireframe'
+          ]
         },
         {
           icon: 'terminal',
           title: 'Others',
           skillList: ['Git', 'Webpack'],
-          info: '說明說明說明說明說明說明說明說明說明說明說明說明說明說明'
+          info: [
+            '熟悉 Git 常用的基本指令',
+            '使用 Webpack 建置小型專案'
+          ]
         }
       ],
       webSkill: [

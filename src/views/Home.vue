@@ -22,10 +22,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <ExperiencesList title="Experiences."></ExperiencesList>
+            <ExperiencesList title="Experiences." subTitle="經歷"></ExperiencesList>
           </div>
           <div class="col-md-6">
-            <Education title="Education."></Education>
+            <Education title="Education." subTitle="學歷"></Education>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@ export default {
   data () {
     return {
       intersectionOptions: {
-        root: document.querySelector('#home'),
+        root: document.querySelector('#app'),
         rootMargin: '0px 0px 0px 0px',
         threshold: 0
       },
