@@ -88,7 +88,7 @@ self.__precacheManifest = [
     "url": "/shueny/img/img_mask.b7bf080f.svg"
   },
   {
-    "revision": "7435da28eaaf94ba447a2d8603bc4ccf",
+    "revision": "dc9a959108a228fa0831213f7a36427d",
     "url": "/shueny/index.html"
   },
   {
