@@ -1,11 +1,18 @@
 import Vue from 'vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-  faCircle, faMobileAlt, faEnvelope, faEllipsisH, faDesktop, faServer, faPalette, faTerminal, faBars 
+  faCircle,
+  faMobileAlt,
+  faEnvelope,
+  faEllipsisH,
+  faDesktop,
+  faServer,
+  faPalette,
+  faTerminal,
+  faBars,
 } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/fontawesome-free-brands'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import Progress from 'bootstrap-vue/es/components/progress'
 import BootstrapVue from 'bootstrap-vue'
 import Meta from 'vue-meta'
 import VueWow from 'vue-wow'
@@ -21,10 +28,20 @@ import 'wowjs/css/libs/animate.css'
 import 'animate.css'
 
 // eslint-disable-next-line max-len
-library.add(faCircle, faMobileAlt, faEnvelope, faGithub, faEllipsisH, faDesktop, faServer, faPalette, faTerminal, faBars)
+library.add(
+  faCircle,
+  faMobileAlt,
+  faEnvelope,
+  faGithub,
+  faEllipsisH,
+  faDesktop,
+  faServer,
+  faPalette,
+  faTerminal,
+  faBars,
+)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
-Vue.use(Progress)
 Vue.use(BootstrapVue)
 Vue.use(Meta)
 // mount with global
@@ -33,5 +50,5 @@ Vue.use(VueWaypoint)
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount('#app')

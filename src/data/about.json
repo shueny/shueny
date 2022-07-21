@@ -1,0 +1,38 @@
+{
+  "name": "王舜瑩",
+  "enName": "Shueny Wang",
+  "title": "",
+  "subTitle": "I'm Shueny Wang / 王舜瑩",
+  "description": [
+    "I am a web designer and developer from Taiwan.",
+    "About 6 years of experience as a frontend developer and 3 years as a designer. Participate in large-scale e-commerce platform, Vehicle SOC platform and B2B ERP system development."
+  ],
+  "contact": [
+    {
+      "icon": "mobile-alt",
+      "data": "0911241129"
+    },
+    {
+      "icon": "envelope",
+      "data": "shuen29@gmail.com"
+    }
+  ],
+  "links": [
+    {
+      "iconName": "github",
+      "link": "https://github.com/shueny"
+    },
+    {
+      "iconName": "github-alt",
+      "link": "https://shueny.github.io/"
+    },
+    {
+      "iconName": "wordpress",
+      "link": "https://mango-pizza.life"
+    },
+    {
+      "iconName": "codepen",
+      "link": "https://codepen.io/Shueny/"
+    }
+  ]
+}
