@@ -5,11 +5,19 @@
     <h2 class="subTitle">{{ subTitle }}</h2>
     <div class="">
       <ul class="ul-list">
-        <li class="item ul-list-item wow slideInUp" v-for='item in experiences' :key='item.index'>
+        <li
+          class="item ul-list-item wow slideInUp"
+          v-for="item in experiences"
+          :key="item.index"
+        >
           <h5>{{ item.title }} | {{ item.during }}</h5>
           <h6>{{ item.company }}</h6>
           <ul class="ul-list--inner">
-            <li class="item" v-for='(item, index) in experiences' :key='item.index'>
+            <li
+              class="item"
+              v-for="(item, index) in experiences"
+              :key="item.index"
+            >
               {{ item.list[index] }}
             </li>
           </ul>
@@ -19,77 +27,112 @@
   </div>
 </template>
 <style lang="scss" scoped>
-@import "@/assets/scss/base/_variables.scss";
+@import '@/assets/scss/base/_variables.scss';
 </style>
 
 <script>
 export default {
   name: 'ExperiencesList',
   props: ['title', 'subTitle'],
-  data () {
+  data() {
     return {
       experiences: [
         {
-          company: 'Citiesocial 任開媒體',
-          title: '前端工程師',
-          during: '2018/5-Now',
+          company: 'Trend Micro',
+          title: 'Senior Front-End Developer',
+          during: '2021/9-present',
           list: [
-            '測試測試測試A',
-            '測試測試測試B',
-            '測試測試測試C',
-            '測試測試測試D'
-          ]
+            'Implemented VSOC (Vehicle SOC) platform using React.js',
+            'Implemented Campaign website by Next.js and tailwindcss',
+            'Maintain the finite state-machine model in building complex UI components or workflows by XState',
+            'Tracked system through Google Tag Manager, Google Analytics and Hotjar',
+          ],
         },
         {
-          company: 'MOMO 富邦媒體股份有限公司',
-          title: '工程師',
+          company: 'Synttro',
+          title: 'Senior Front-End Developer',
+          during: '2020/5 - 2021/9',
+          list: [
+            'Developed a B2B Enterprise Team Cooperation system, including Project Management, Meeting Minute System and BIM/Forge Viewer Management System',
+            'Established product design specifications, user interface and UI flow',
+            'Improved the development process, providing UI Mockups before development',
+            'Optimized user interface and operation flow through user feedbacks',
+            'Used Puppeteer for end to end testing',
+          ],
+        },
+        {
+          company: 'Softall',
+          title: 'Front-End Developer',
+          during: '2019/8-2020/3',
+          list: [
+            'Restructured Event page from HTML to React.js and setup a copywriting principles by JSON for marketing',
+            'Improved process of setting up banner in Home page, developing a banner setup function in B2B system for Admin',
+            'Solved the Responsive Web Design problem of CSS/HTML layout and cross-browser compatibility',
+            'Developed a new online resume product using React.js, TypeScript',
+            'Used storybook to create project components',
+          ],
+        },
+        {
+          company: 'Citiesocial 任開媒體',
+          title: 'Front-End Developer',
+          during: '2018/5-2019/8',
+          list: [
+            'Developed member system by RESTful APIs and third-party web services APIs',
+            'Optimized the marketing setup process and provide more flexible marketing tools for Marketing on Shopify',
+            'Created more template modules for Marketing Event',
+            'Optimized existing architecture to reduces capacity and increases 90% speed',
+            'Improved user experience by tracking user behavior on Hotjar and analyzed',
+            'Set Appier or others tracking SDK for Marketing',
+            'Set Google Analytics Events in Google Tag Manager to tracking event effectiveness',
+            'Clarified and solved problems immediately',
+            'Tracked and researched web performance with Google Analytics and Google Speed',
+          ],
+        },
+        {
+          company:
+            'MOMO Fubon Multimedia Technology Co., Ltd. (富邦媒體股份有限公司)',
+          title: 'Engineer',
           during: '2016/8-2018/5',
           list: [
-            '公司大小網、後台介面切版(HTML5, CSS3, RWD)',
-            '用 JS 撰寫 Banner 及網頁動態特效',
-            '和後台開發人員進行應用及系統整合',
-            '與企劃、工程師配合，執行系統研發，開發網頁新功能',
-            'UI/UX 動線規劃設計',
-            '練習發現小遊戲並用JS撰寫'
-          ]
+            'Developed refactoring Desktop and Mobile user interface for home page',
+            'Solved the problem of CSS/HTML layout and cross-browser compatibility',
+            'Parsed keywords and setting up HTML meta tags to increase SEO',
+            'Tracked and researched web performance with Google Analytics and Google Speed',
+          ],
         },
         {
-          company: '天擎旅行社',
-          title: '設計',
+          company: 'Skyway 天擎旅行社',
+          title: 'Designer',
           during: '2015/9-2016/7',
           list: [
-            '公司官網視覺設計及建構',
-            '撰寫及編修jQuery語法製作網頁動畫',
-            '行程景點視覺設計、刊物設計、EDM、名片等',
-            '產品行程的編修與美化、主視覺設定',
-            '展覽場的規劃與佈置',
-            '與業務人員討論及製作相關產品視覺設計'
-          ]
+            'Updated and maintained travel products on website',
+            'Designed banners and all of the travel routes products, like DM handbook...etc.',
+            'Planed and layout the exhibition',
+            'Contacted with printers or other manufacturers',
+          ],
         },
         {
           company: '新曜有限公司',
-          title: '設計兼採購助理',
+          title: 'Designer and Purchasing Assistant',
           during: '2013/10-2015/8',
           list: [
-            '產品照片拍攝',
-            '刊物設計及產品介紹圖設計及製作',
-            '與外國客戶接洽、email書信',
-            '訂單處理(報價、整理訂單、訂船、訂艙等等)',
-            '與工廠及船公司聯繫'
-          ]
+            'CIS design',
+            'Products photography',
+            'Contacted with foreign customers by emails',
+            'Processed overseas order-related business',
+          ],
         },
         {
           company: 'S.H.I.T.來自臺灣的獨特內斂',
-          title: '網站管理及設計',
+          title: 'Designer',
           during: '2009/7-2013/4',
           list: [
-            '網站改版設計與製作',
-            'flash網頁維護及新產品網頁的flash頁面製作',
-            '產品圖編修、產品上下架、網頁更新'
-          ]
-        }
-      ]
+            'Implemented website revision by flash',
+            'Maintained and updated products on website',
+          ],
+        },
+      ],
     }
-  }
+  },
 }
 </script>
