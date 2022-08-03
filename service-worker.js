@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/shueny/precache-manifest.9091a15cb49e9e5f8d3578210272f392.js"
+  "/shueny/precache-manifest.d5d5c844b2fe2b226d657d273dbe49cb.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "shueny"});
+workbox.core.setCacheNameDetails({prefix: "side-projects"});
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
