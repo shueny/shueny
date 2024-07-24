@@ -2,19 +2,27 @@
   <div class="skill section section-bg spaceWrapperContainer">
     <div id="skill" class="spaceWrapper"></div>
     <div class="container">
-    <h1 class="title">{{ title }}</h1>
-    <h2 class="subTitle">{{ subTitle }}</h2>
+      <h1 class="title">{{ title }}</h1>
+      <h2 class="subTitle">{{ subTitle }}</h2>
       <div class="row my-4">
-        <div class="col-md-6 mb-4 wow bounceIn animated" v-for="(item, index) in skills" :key='item.index'>
+        <div
+          class="col-md-6 mb-4 wow bounceIn animated"
+          v-for="(item, index) in skills"
+          :key="item.index"
+        >
           <div class="skill-item">
             <span class="icon d-inline-block mb-3">
-              <font-awesome-icon :icon="item.icon"/>
+              <font-awesome-icon :icon="item.icon" />
             </span>
             <h4 class="skill-item-title font-weight-bold">{{ item.title }}</h4>
             <p class="line-s my-2 mx-auto"></p>
             <h6 class="my-3">
-              <span class="mx-1 d-inline-block" v-for="(skillItem, index) in item.skillList">
-                {{ skillItem }}{{ (index+1 < item.skillList.length) ? ', ' : '' }}
+              <span
+                class="mx-1 d-inline-block"
+                v-for="(skillItem, index) in item.skillList"
+              >
+                {{ skillItem
+                }}{{ index + 1 < item.skillList.length ? ', ' : '' }}
               </span>
             </h6>
             <div class="skill-item-text">
@@ -70,7 +78,7 @@
         </div>
       </div>
       <!-- Progress bar style -->
-      <!-- <div class="row">
+    <!-- <div class="row">
         <div class="col-md-4" v-for="(group, i) in webSkillGroups" :key='group.i'>
           <div class="skill-web mb-2 fade_in visible"
           v-for="item in webSkill.slice(i * (webSkill.length / 3), (i + 1) * (webSkill.length / 3))"
@@ -120,9 +128,9 @@ export default {
   name: 'Skills',
   props: {
     title: String,
-    subTitle: String
+    subTitle: String,
   },
-  data () {
+  data() {
     return {
       striped: true,
       animate: true,
@@ -130,94 +138,135 @@ export default {
         {
           icon: 'desktop',
           title: 'Frontend Development',
-          skillList: ['HTML5', 'CSS3', 'JavaScript(ES6)', 'jQuery', 'Liquid', 'Vue.js', 'React'],
+          skillList: [
+            'React.js',
+            'Typescript',
+            'Nextjs',
+            'Cypress',
+            'Jest',
+            'HTML5',
+            'CSS3',
+            'JavaScript(ES6)',
+            'jQuery',
+            'Vitest',
+            'monorepo',
+            'React Native',
+            'Shopify',
+            'Liquid',
+            'Vue.js',
+          ],
           info: [
-            '使用 HTML5、CSS3、SCSS 獨立切版或套用 Bootstrap',
-            '搭配 JavaScript 或 jQuery 製作各式動畫效果',
-            '熟悉 Liquid 語法，開發各種樣版或新功能、新畫面',
-            '以 Ajax 串接 API 資料',
-            '尚懂 Vue.js，目標學習建置各小型專案來更熟悉 Vue.js ',
-            '曾學習過 React'
-          ]
+            'Implemented a platform with a monorepo structure for multiple projects with multilingual by monorepo, ReactJS, TypeScript, React-i18n and Vitest.',
+            'Development and implementation of automated UI E2E testing procedures using Cypress and TestRail',
+            'Skilled in using Ajax/useQuery to integrate API data.',
+            'Familiar with Vue.js and committed to building small-scale projects to deepen expertise in Vue.js.',
+          ],
         },
         {
           icon: 'server',
           title: 'Backend Development',
-          skillList: ['Node.js', 'Express.js', 'MongoDB', 'PHP', 'MySQL'],
+          skillList: [
+            'GraphQL',
+            'Wagtail CMS',
+            'AWS',
+            'Node.js',
+            'Express.js',
+            'MongoDB',
+            'PHP',
+            'MySQL',
+          ],
           info: [
-            '曾經學習過及使用過 PHP & MySQL',
-            '目前學習並使用 Node.js, Express.js, MongoDB 來建置小型專案'
-          ]
+            'Development and implementation of a custom content management system (CMS) using Wagtail CMS',
+            'Learned to monitor API on AWS',
+            'Learned Node.js, Express.js, MongoDB for side project',
+          ],
         },
         {
           icon: 'palette',
           title: 'Web Design',
-          skillList: ['Photoshop', 'Illustrator', 'Adobe XD'],
+          skillList: [
+            'Tailwind CSS',
+            'Ant Design',
+            'Figma',
+            'Photoshop',
+            'Illustrator',
+            'Adobe XD',
+          ],
           info: [
-            '使用 Ps 進行圖片處理，製作簡易網頁廣告、gif 等',
-            '使用 Ai 處理向量格式圖形、繪製向量圖檔、SVG 等',
-            'Adobe XD 製作基本的 wireframe'
-          ]
+            'Adept at styling company websites using TailwindCSS to ensure responsive and visually appealing designs',
+            'Proficient in using Adobe Photoshop (Ps) for image editing, creating simple web advertisements, and designing GIFs',
+            'Skilled in utilizing Adobe Illustrator (Ai) for vector graphic design, creating vector files, and working with SVG formats',
+            'Experienced in using Adobe XD to create basic wireframes for web and app design',
+          ],
         },
         {
           icon: 'terminal',
           title: 'Others',
           skillList: ['Git', 'Webpack'],
           info: [
-            '熟悉 Git 常用的基本指令',
-            '使用 Webpack 建置小型專案'
-          ]
-        }
+            'Familiar with git commands',
+            'Using Webpack building side project',
+          ],
+        },
       ],
       webSkill: [
         {
-          item: 'HTML5, CSS3',
-          data: 95
+          item: 'React.js, TypeScript, Next.js',
+          data: 90,
+        },
+        {
+          item: 'Tailwind CSS',
+          data: 85,
         },
         {
           item: 'SCSS',
-          data: 80
+          data: 80,
         },
         {
-          item: 'Bootstrap',
-          data: 85
+          item: 'Bootstrap, Ant Design',
+          data: 85,
         },
         {
           item: 'Javascript',
-          data: 75
+          data: 75,
         },
         {
-          item: 'jQuery',
-          data: 90
+          item: 'Cypress',
+          data: 70,
+        },
+        {
+          item: 'Vitest',
+          data: 40,
         },
         {
           item: 'Vue.js',
-          data: 40
+          data: 40,
+        },
+        {
+          item: 'HTML5, CSS3',
+          data: 95,
         },
         {
           item: 'Node.js',
-          data: 5
+          data: 5,
         },
         {
           item: 'Webpack',
-          data: 25
-        }
+          data: 25,
+        },
       ],
-      otherSkill: [
-        'RWD', 'Git', 'SEO', 'GA', 'GTM'
-      ],
+      otherSkill: ['GraphQL', 'Wagtail CMS', 'RWD', 'Git', 'SEO', 'GA', 'GTM'],
       design: ['Zeplin', 'XD', 'Photoshop', 'Illustrator'],
-      language: [
-        '中文 / 台語 精通', '英文 (TOEIC 綠色證照)'
-      ]
+      language: ['中文 / 台語 精通', '英文 (TOEIC 綠色證照)'],
     }
   },
   computed: {
-    webSkillGroups () {
-      return Array(this.webSkill.length / 3).fill().map((_, i) => [this.webSkill[i * 2], this.webSkill[i * 2 + 1]])
-    }
+    webSkillGroups() {
+      return Array(this.webSkill.length / 3)
+        .fill()
+        .map((_, i) => [this.webSkill[i * 2], this.webSkill[i * 2 + 1]])
+    },
   },
-  methods: {
-  }
+  methods: {},
 }
 </script>

@@ -5,12 +5,15 @@
   "subTitle": "I'm Shueny Wang / 王舜瑩",
   "description": [
     "I am a web designer and developer from Taiwan.",
-    "About 6 years of experience as a frontend developer and 3 years as a designer. Participate in large-scale e-commerce platform, Vehicle SOC platform and B2B ERP system development."
+    "Experienced Senior Front-End Developer with a diverse background in e-commerce, B2B systems, and security platforms.",
+    "Proficient in ReactJS, TypeScript, Next.js, and automated testing frameworks like Cypress.",
+    "Proven track record in improving development efficiency, enhancing user experience, and delivering high-quality, scalable solutions.",
+    "Strong communicator and team player who thrives in collaborative environments and is passionate about continuous learning and sharing knowledge."
   ],
   "contact": [
     {
       "icon": "mobile-alt",
-      "data": "0911241129"
+      "data": "+886-911241129"
     },
     {
       "icon": "envelope",
