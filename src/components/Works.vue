@@ -6,27 +6,40 @@
     <div class="container work_list">
       <ul class="">
         <div class="row mx-auto">
-          <li class="col-md-4 p-4 wow slideInUp" v-for="list in works" :key="list.index"
-          data-wow-duration="0.5s" data-wow-delay="0.5s">
-              <a class="btn-link" :href="list.link" target="_blank">
-                <img :src="list.image" :alt="list.title">
-                <div class="text-left text">
-                  <h3 class="title mt-3">{{ list.title }}</h3>
-                  <div class="mb-2">                    
-                    <span class="mx-1 d-inline-block" v-for="(listItem, index) in list.tags">
-                      {{ listItem }}{{ (index+1 < list.tags.length) ? ', ' : '' }}
-                    </span>
-                  </div>
+          <li
+            class="col-md-4 p-4 wow slideInUp"
+            v-for="list in works"
+            :key="list.index"
+            data-wow-duration="0.5s"
+            data-wow-delay="0.5s"
+          >
+            <a class="btn-link" :href="list.link" target="_blank">
+              <img :src="list.image" :alt="list.title" />
+              <div class="text-left text">
+                <h3 class="title mt-3">{{ list.title }}</h3>
+                <div class="mb-2">
+                  <span
+                    class="mx-1 d-inline-block"
+                    v-for="(listItem, index) in list.tags"
+                  >
+                    {{ listItem }}{{ index + 1 < list.tags.length ? ', ' : '' }}
+                  </span>
                 </div>
-                <div class="description">
-                  <ul class="ul-list">
-                    <li class="item ul-list-item" v-for="listItem in list.description">
-                      {{ listItem }}
-                    </li>
-                  </ul>
-                </div>
-              </a>
-              <a class="u-mobile-only btn-link" :href="list.link">{{ list.link }}</a>
+              </div>
+              <div class="description">
+                <ul class="ul-list">
+                  <li
+                    class="item ul-list-item"
+                    v-for="listItem in list.description"
+                  >
+                    {{ listItem }}
+                  </li>
+                </ul>
+              </div>
+            </a>
+            <a class="u-mobile-only btn-link" :href="list.link">
+              {{ list.link }}
+            </a>
           </li>
         </div>
       </ul>
@@ -45,18 +58,18 @@ import ImgWork_vueTodo from '../assets/images/works/vue-todo-1.jpg'
 export default {
   name: 'Works',
   props: ['title', 'subTitle'],
-  data () {
+  data() {
     return {
       works: [
         {
-          title: 'MOMOSHOP 品牌旗艦館',
+          title: 'MOMOSHOP Brand Flagship Store',
           tags: ['HTML', 'CSS3', 'Javascript', 'jQuery'],
           image: ImgWork_momoBrand,
           link: 'https://www.momoshop.com.tw/brand/Main.jsp',
           description: [
-            '依照設計的畫面，切版並重寫 CSS',
-            '使用 jQuery 撰寫 Menu 中的 "依字母 & 依注音" 的切換，在此遇到畫面中有另一個子畫面且子畫面中點選後要滾動、定位的挑戰'
-            ]
+            'Implemented design mockups by creating and optimizing CSS.',
+            'Developed a jQuery-based menu for alphabetical and phonetic navigation, tackling challenges involving sub-menus with scrolling and positioning features.',
+          ],
         },
         {
           title: 'MOMOSHOP (Desktop)',
@@ -64,8 +77,8 @@ export default {
           image: ImgWork_momoIndex,
           link: 'https://www.momoshop.com.tw/main/Main.jsp',
           description: [
-            'MOMOSHOP 本站桌機版的首頁區塊、商品頁、分類頁、購物車、會員中心...等改版製作'
-            ]
+            'Redesigned and developed key sections of the MOMOSHOP desktop site, including the homepage, product pages, category pages, shopping cart, and member center.',
+          ],
         },
         {
           title: 'MOMOSHOP (Mobile)',
@@ -73,20 +86,18 @@ export default {
           image: ImgWork_momoMobile,
           link: 'https://m.momoshop.com.tw/main.momo',
           description: [
-            'MOMOSHOP 本站手機版的首頁區塊、商品頁、分類頁、購物車、會員中心...等改版製作',
-            ''
-            ]
+            'Led the redesign and development of the mobile version of the MOMOSHOP site, focusing on the homepage, product pages, category pages, shopping cart, and member center.',
+          ],
         },
         {
-          title: '爬格子',
-          tags: ['jQuery','SVG'],
+          title: 'ClimbStairs Game',
+          tags: ['jQuery', 'SVG'],
           image: ImgWork_climbStair,
           link: 'https://shueny.github.io/climbstairs-game/',
           description: [
-            '一個大家每當無法決定事情的時候必玩的小遊戲',
-            '在框框中輸入直線個數(即幾個選項)並按下 Enter 鍵後便隨機產生相對應的橫線，點選任一個 momoco 的頭，會自動沿著線走到終點',
-            '未來可以再修改增加可以自己輸入選項，根據選項的個數產生直線。也可以與資料庫連接，記下曾經使用的記錄'
-            ]
+            'Developed an interactive game for decision making where users input a number of options to generate random lines. Players select a character to navigate through the lines to reach a conclusion.',
+            'Planned future enhancements to allow user-defined options, connection to a database for tracking usage history, and more.',
+          ],
         },
         {
           title: 'ToDo List',
@@ -94,14 +105,14 @@ export default {
           image: ImgWork_vueTodo,
           link: 'https://shueny.github.io/vue-todolist-1/',
           description: [
-            '熟悉 Vue.js 從學習寫 Todo List 開始',
-            '學習如何使用 Vue.js 建置 Project、Vue.js 的語法、如何使用 Plugins、熟習 ES6 的寫法...等等',
-            '使用 localStorge 做 List 的存取，可以新增資料、切換狀態、標記、刪除資料、新增該項目的 comment',
-            '下一版考慮與 MongoDB 串接，把資料存到資料庫裡'
-            ]
-        }
-      ]
+            'Started learning Vue.js by building a ToDo List application.',
+            'Gained experience in setting up Vue.js projects, using Vue.js syntax, incorporating plugins, and mastering ES6.',
+            'Implemented localStorage for data persistence, allowing addition, state toggling, marking, deletion of items, and adding comments to tasks.',
+            'Considering future integration with MongoDB to store data in a database.',
+          ],
+        },
+      ],
     }
-  }
+  },
 }
 </script>

@@ -5,11 +5,17 @@
     <h2 class="subTitle">{{ subTitle }}</h2>
     <div class="exp-special">
       <ul class="ul-list">
-        <li class="item ul-list-item wow slideInUp" v-for='item in education' :key='item.index'>
+        <li
+          class="item ul-list-item wow slideInUp"
+          v-for="item in education"
+          :key="item.index"
+        >
           <h5>{{ item.department }} | {{ item.during }}</h5>
           <h6>{{ item.title }}</h6>
           <ul class="ul-list--inner">
-            <li class="item" v-for='list in item.about' :key='list.index'>{{ list }}</li>
+            <li class="item" v-for="list in item.about" :key="list.index">
+              {{ list }}
+            </li>
           </ul>
         </li>
       </ul>
@@ -18,35 +24,35 @@
 </template>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/base/_variables.scss";
+@import '@/assets/scss/base/_variables.scss';
 </style>
 <script>
 export default {
   name: 'Education',
   props: ['title', 'subTitle'],
-  data () {
+  data() {
     return {
       education: [
         {
-          title: '國立臺南大學',
+          title: 'National University of Tainan',
           during: '2011/8-2009/9',
-          department: '數位學習科技所',
+          department: 'Information and Learning Technology',
           about: [
-            '運用資訊科技於教材開發及教學設計,改善教學品質並提升學習成效',
-            '論文: 以Unity的架構並用3D Max建模,製作出一個虛擬的博物館導覽系統,再對此系統做 UI/UX 及開發技術的評估'
-          ]
+            'Applied information technology to teaching materials development and instructional design to improve teaching quality and learning outcomes.',
+            'Thesis: Developed a virtual museum tour system using Unity and 3D Max modeling, and evaluated the system\u0027s UI/UX and development techniques.',
+          ],
         },
         {
-          title: '實踐大學',
+          title: 'Shih Chien University',
           during: '2009/6-2005/9',
-          department: '資訊模擬與設計系',
+          department: 'Computer Simulation & Design',
           about: [
-            '網頁設計、平面設計、動畫設計、電腦程式語法及資料庫',
-            '專題: 用C#及資料庫製作電子商務網站'
-          ]
-        }
-      ]
+            'Web design, graphic design, animation design, computer programming, and databases.',
+            'Project: Created an e-commerce website using C# and databases.',
+          ],
+        },
+      ],
     }
-  }
+  },
 }
 </script>
