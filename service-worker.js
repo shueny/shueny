@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/shueny/precache-manifest.4c8b9b29b7c68f78a674629310be2a85.js"
+  "/shueny/precache-manifest.5cf7e964c9c5b4c4436223efb67485ef.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "side-projects"});

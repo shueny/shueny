@@ -8,12 +8,12 @@ self.__precacheManifest = [
     "url": "/shueny/js/about.b532cd4f.js"
   },
   {
-    "revision": "0d4e29ba66df51b462ca",
-    "url": "/shueny/css/app.778af4b7.css"
+    "revision": "3b016dde903e323202cf",
+    "url": "/shueny/css/app.8a5c4f61.css"
   },
   {
-    "revision": "0d4e29ba66df51b462ca",
-    "url": "/shueny/js/app.e55b719b.js"
+    "revision": "3b016dde903e323202cf",
+    "url": "/shueny/js/app.a7516405.js"
   },
   {
     "revision": "95c4b4bdbd1f1c5a84ac",
@@ -88,7 +88,7 @@ self.__precacheManifest = [
     "url": "/shueny/img/img_mask.b7bf080f.svg"
   },
   {
-    "revision": "9477c1865e781f4e625f342b077dddde",
+    "revision": "cfe46f39819362a4f81c953bb44360e3",
     "url": "/shueny/index.html"
   },
   {
