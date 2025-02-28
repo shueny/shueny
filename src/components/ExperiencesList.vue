@@ -40,7 +40,7 @@ export default {
         {
           company: 'Trend Micro',
           title: 'Senior Front-End Developer',
-          during: '2021/9-present',
+          during: '2021/9 - 2025/3',
           list: [
             'Implemented a B2B VSOC(Vehicle Security Operations Center) platform with a monorepo structure for multiple projects with multilingual by monorepo, ReactJS, TypeScript, React-i18n and Vitest.',
             'Spearheaded the development and implementation of automated UI E2E testing procedures using Cypress and TestRail. This initiative resulted in a 50% improvement in delivery efficiency by significantly reducing defect rates prior to product release.',
