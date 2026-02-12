@@ -3,7 +3,7 @@
     <h2> {{ title }}</h2>
     <div class="exp-special">
       <div class="exp-special-list" v-for='item in specialExperience' :key='item.index'>
-        <img :src="item.img" :alt="item.item">
+        <img :src="item.img" :alt="item.item" loading="lazy" width="350" height="200">
         <h5>{{ item.title }}</h5>
         <p class="during">{{ item.during }}</p>
       </div>

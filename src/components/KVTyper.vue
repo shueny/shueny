@@ -15,7 +15,6 @@
 <script>
 import { VueTyper } from 'vue-typer'
 import ImgPicBg from '../assets/images/head-bg.jpg'
-import ImgName from '../assets/images/logo-name.png'
 
 export default {
   name: 'KVTyper',
@@ -24,7 +23,6 @@ export default {
   data () {
     return {
       imgPicBg: ImgPicBg,
-      imgName: ImgName,
       contact: [
         {
           icon: 'mobile-alt',

@@ -39,25 +39,16 @@
 
 <script>
 // @ is an alias to /src
+// Above-fold components loaded eagerly
 import NavBar from '@/components/Navbar.vue'
-// import HelloWorld from '@/components/HelloWorld.vue'
-import Works from '@/components/Works.vue'
 import KVTyper from '@/components/KVTyper.vue'
 import AboutMe from '@/views/AboutMe.vue'
-import Skills from '@/components/Skills.vue'
-import Education from '@/components/Education.vue'
-import ExperiencesList from '@/components/ExperiencesList.vue'
+// Below-fold components loaded lazily for faster initial paint
+const Skills = () => import(/* webpackChunkName: "below-fold" */ '@/components/Skills.vue')
+const Works = () => import(/* webpackChunkName: "below-fold" */ '@/components/Works.vue')
+const Education = () => import(/* webpackChunkName: "below-fold" */ '@/components/Education.vue')
+const ExperiencesList = () => import(/* webpackChunkName: "below-fold" */ '@/components/ExperiencesList.vue')
 import VueWaypoint from 'vue-waypoint'
-
-import { WOW } from 'wowjs'
-
-const wow = new WOW({
-  boxClass: 'wow',
-  animateClass: 'animated',
-  offset: 0,
-  mobile: true
-})
-wow.init()
 
 export default {
   name: 'home',
@@ -81,6 +72,18 @@ export default {
       },
       activeBlock: 'about'
     }
+  },
+  mounted () {
+    // Initialize WOW.js after DOM is ready to avoid blocking initial render
+    import('wowjs').then(({ WOW }) => {
+      const wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset: 0,
+        mobile: true
+      })
+      this.$nextTick(() => wow.init())
+    })
   },
   methods: {
     logOne ({ el, going, direction }) {

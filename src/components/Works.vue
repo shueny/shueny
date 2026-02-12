@@ -14,7 +14,7 @@
             data-wow-delay="0.5s"
           >
             <a class="btn-link" :href="list.link" target="_blank">
-              <img :src="list.image" :alt="list.title" />
+              <img :src="list.image" :alt="list.title" loading="lazy" width="350" height="200" />
               <div class="text-left text">
                 <h3 class="title mt-3">{{ list.title }}</h3>
                 <div class="mb-2">

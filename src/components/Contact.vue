@@ -66,9 +66,6 @@
 </template>
 <script>
 import ImgMe from '../assets/images/shueny2019.jpg'
-import ImgMask from '../assets/images/img_mask.svg'
-import ImgPicBg from '../assets/images/header-bg.jpg'
-import ImgLogo2 from '../assets/images/logo-shueny2.png'
 
 export default {
   name: 'Contact',
@@ -78,9 +75,6 @@ export default {
   data () {
     return {
       imgMe: ImgMe,
-      mask: ImgMask,
-      imgBg: ImgPicBg,
-      imgLogo2: ImgLogo2,
       contact: [
         {
           icon: 'mobile-alt',

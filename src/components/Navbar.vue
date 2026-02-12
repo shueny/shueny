@@ -22,10 +22,6 @@
     </div>
 </template>
 <script>
-import ImgLogo from '../assets/images/logo-shueny.png'
-import ImgPicBg from '../assets/images/header-bg.jpg'
-import ImgLogoS from '../assets/images/Shueny.png'
-
 export default {
   name: 'NavBar',
   props: ['data'],
@@ -34,11 +30,6 @@ export default {
       showNavbar: false,
       lastScrollPosition: 0,
       isActive: false,
-      imgLogo: ImgLogo,
-      imgBg: ImgPicBg,
-      imgLogoS: ImgLogoS,
-      logo: '../assets/images/logo-web.png',
-      icons: ['bars', 'envelope'],
       contact: [
         {
           icon: 'mobile-alt',

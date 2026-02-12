@@ -24,7 +24,6 @@ import store from './store'
 import './registerServiceWorker'
 import 'bootstrap' // Import js file
 import 'bootstrap/dist/css/bootstrap.min.css' // Import css file
-import 'wowjs/css/libs/animate.css'
 import 'animate.css'
 
 // eslint-disable-next-line max-len
